@@ -1,0 +1,90 @@
+body{
+	background-color:beige;
+}
+ .header{
+	background-color: pink;
+	overflow: hidden;
+}
+.wrapper{
+	float: left;
+	text-align: center;
+	text-decoration: none;
+	padding: 14px 16px;
+	color: black;
+	font-size: 17px;
+}
+.branding-title{
+	float: left;
+	color: black;
+}
+
+.nav{
+	float: right;
+
+}
+.nav a:hover{
+	color: grey;
+
+}
+.items{
+	background-color: #ffffff;
+	float: left;
+	width: 24.9999%;
+}
+@media only screen and (max-width:700px ) {
+	.items{
+		width: 50%;
+		margin: 6px 0;
+	}
+}
+@media only screen and (max-width:500px){
+	.items{
+		width : 100%;
+	}
+}
+
+.items img{
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	width: 40%;
+	border-radius: 10px;
+	
+}
+
+
+/*Styling the footer*/
+.footer {
+	background-color: black;
+	color: white;
+	padding: 10px 20px;
+	width: 97.3%;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	position: relative;
+}
+.footer img {
+	height: 100px;
+	margin-right: 20px;
+}
+.footer-text {
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+}
+.footer p {
+	margin: 0;
+}
+
+/*Styling the suggest page*/
+.section-page{
+	text-align: center;
+}
+.section-page .data{
+	color: black;
+	text-align: left;
+	font-size: 20px;
+}
+
+
