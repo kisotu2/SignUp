@@ -2,7 +2,8 @@
 $pageTitle = "Personal Media Library";
 include("header.php");
 ?>
-			<div class="section catalog random">
+
+			<div class="section catalog ">
 				<div class="wrapper">
 					<h2>May you Suggest Something</h2>
 					<ul class = "items">

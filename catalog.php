@@ -1,38 +1,34 @@
 <?php 
-$pageTitle = "Full Catalog ";
+$pageTitle = "Full Catalog";
 $section = null;
 
-//creating an array
+// Including the data file that contains the $catalog array
 include("../data.php");
+include("functions.php");
 
-
-//setting such that if nothing is selected the title still remains to be Full catalog
+// Setting the title and section based on the selected category
 if (isset($_GET["cat"])){
-    //setting the title to match the selected link
-if($_GET['cat']== "books"){
-    $pageTitle = "Books";
-    $section = "books";
-}
-elseif($_GET["cat"]== "movies"){
-    $pageTitle = "Movies";
-    $section = "movies";
-}
-elseif($_GET["cat"]== "music"){
-$pageTitle = "Music";
-$section = "music ";
-}
+    if($_GET['cat'] == "books"){
+        $pageTitle = "Books";
+        $section = "books";
+    } elseif($_GET["cat"] == "movies"){
+        $pageTitle = "Movies";
+        $section = "movies";
+    } elseif($_GET["cat"] == "music"){
+        $pageTitle = "Music";
+        $section = "music";
+    }
 }
 
 include("header.php");
 ?>
-<div class = "section-page">
-    <h1><?php echo $pageTitle;?></h1>
-    <div class="data">
-        <ul class = "item">
+<div class="section-catalog-page">
+    <h1><?php echo $pageTitle; ?></h1>
+    <div class="wrapper">
+        <ul class="items">
           <?php 
-          foreach($catalog as $item){
-           
-            echo"<li><a href = '#'><img src = '".$item["img"]."' alt = '".$item["title"]."'/> ></a></li>";
+          foreach($catalog as $id => $item){
+           echo get_item_html($id,$item);
           }
           ?>
         </ul>
