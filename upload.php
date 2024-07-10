@@ -1,30 +1,28 @@
-<?php 
+<?php
 include_once("connect.php");
-if($_POST["submit"]){
+
+if (isset($_POST["submit"])) {
     $fullName = $_POST["fullname"];
-    $fileName = $_FILES["Image"]["name"];
-    $extension = pathinfo($Image,PATHINFO_EXTENSION);
-    $allowed = array("jpeg","jpg","png","gif","JPG");
-    $tempName = $_FILES["Image"]["tmp_name"];
-    $targetPath = "uploads/".$Image;
+    $fileName = $_FILES["image"]["name"];
+    $extension = pathinfo($fileName, PATHINFO_EXTENSION);
+    $allowed = array("jpeg", "jpg", "png", "gif");
+    $tempName = $_FILES["image"]["tmp_name"];
+    $targetPath = "uploads/" . $fileName;
 
-    if(in_array($extension,$allowed)){
-        if (move_uploaded_file($tempName,$targetPath)){
-            $query = "INSERT INTO images (name,file_name) VALUES ('$fullName','$fileName')";
-            if(mysqli_query($conn,$query)){
-              header("location : index2.php");
-
-            }else {
-                echo "something is wrong with your image";
+    if (in_array(strtolower($extension), $allowed)) {
+        if (move_uploaded_file($tempName, $targetPath)) {
+            $query = "INSERT INTO images (name, file_name) VALUES ('$fullName', '$fileName')";
+            if (mysqli_query($conn, $query)) {
+                header("Location: index2.php");
+                exit;
+            } else {
+                echo "Something is wrong with your image upload.";
             }
+        } else {
+            echo "File not uploaded.";
+        }
+    } else {
+        echo "Your file type is not allowed.";
     }
-    else{
-        echo"Fle not uploaded]";
-}
-    }
-    else{
-        echo "Your files are not allowed";
-    }
-
 }
 ?>
