@@ -1,87 +1,60 @@
-/* General Styles */
 body {
-    font-family: Arial, sans-serif;
-    background-color: #f4f4f9;
     margin: 0;
     padding: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
+    font-family: Arial, sans-serif;
 }
 
-h1, h2, h3, h4, h5, h6 {
-    color: #333;
-}
-
-a {
-    color: #3498db;
-    text-decoration: none;
-}
-
-a:hover {
-    text-decoration: underline;
-}
-
-/* Search Container */
 .search-container {
-    width: 80%;
-    max-width: 600px;
-    margin: 20px auto;
+    width: 100%;
+    background-color: #f8f8f8;
+    padding: 20px 0;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
     text-align: center;
 }
 
 #searchBar {
-    width: 100%;
+    width: 80%;
+    max-width: 600px;
     padding: 15px;
-    margin: 20px 0;
+    margin: 0 auto;
     box-sizing: border-box;
     border: 1px solid #ddd;
     border-radius: 25px;
     font-size: 16px;
 }
 
-/* Image Container */
 .image_container {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    gap: 20px;
-    width: 80%;
-    max-width: 1000px;
-    margin: 0 auto;
+    padding-top: 100px; /* Adjust for search bar height */
 }
 
 .profile {
-    flex: 0 1 30%;
-    max-width: 300px;
-    background: #fff;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    flex: 1 1 calc(25% - 20px); /* Adjust percentage for number of columns */
+    box-sizing: border-box;
+    margin: 10px;
+    padding: 10px;
+    border: 1px solid #ddd;
     border-radius: 10px;
     text-align: center;
-    padding: 20px;
-    transition: transform 0.3s;
-}
-
-.profile:hover {
-    transform: translateY(-5px);
 }
 
 .profile img {
     max-width: 100%;
     height: auto;
     border-radius: 50%;
-    margin-bottom: 15px;
 }
 
 .profile h3 {
-    margin: 10px 0 0;
-    color: #555;
+    margin: 10px 0 0 0;
+    font-size: 18px;
 }
 
-.profile p {
-    color: #777;
-}
 
 /* Form Container */
 .main-container {
